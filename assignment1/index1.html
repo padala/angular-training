@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+.timer{
+                display: inline-block;
+                margin: auto;
+            }
+           
+            .timer span{
+                display: block;
+                background: #000;
+                color: #fff;
+                height: 54px;
+                float: left;
+                margin-right: 10px;
+			    box-shadow: 2px 2px 8px #747474;
+                padding: 8px;
+                font-size: 50px;
+                text-align: left;
+                              
+            }
+            
+            #days:after,#hours:after,#minutes:after,#seconds:after{
+                
+                font-size: 14px;
+                line-height:normal;
+                display: block;
+                width: inherit;
+                margin-top: 10px;
+                color: #5C5757;
+                text-align: center;
+            }
+            #days:after{
+                content: "Days";
+            }
+            #minutes:after{
+                content: "Minutes";
+            }
+            #hours:after{
+                content: "Hours";
+            }
+            #seconds:after{
+                content: "Seconds";
+            }
+</style>
+</head>
+<body>
+<script src="countdown2.js"></script> 
+<div class="timer">
+           <span id="days">00</span>     
+           <span id="hours">00</span>    
+           <span id="minutes">00</span>  
+           <span id="seconds">00</span>  
+</div>
+
+
+<br><br>
+<input type="datetime-local" id="myInput">
+<br>
+<br>
+<input type="submit" onclick="showInput()">
+
+
+</body>
+</html>

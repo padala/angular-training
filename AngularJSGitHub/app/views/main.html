@@ -1,0 +1,57 @@
+<div class="row" >
+    <div class="col-md-5">
+        <form class="form-horizontal">
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall1">Full Name</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.fullname"  type="text" id="formGroupInputSmall1" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall2">Occupation</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.occupation" type="text" id="formGroupInputSmall2" placeholder="Occupation">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall3">Email</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.email"  type="email" id="formGroupInputSmall3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall4">Personal Link1</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.link1"  type="text" id="formGroupInputSmall4" placeholder="Personal Link1">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall5">Personal Link2</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.link2"  type="text" id="formGroupInputSmall5" placeholder="Personal Link2">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label" for="formGroupInputSmall6">Company Logo</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.logo"  type="text" id="formGroupInputSmall6" placeholder="Company Logo">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-7" style="text-align: center;
+    margin-top: 35px;">
+        <div class="col-md-7" style="float: left">
+            <img style="height: 90px" ng-src="{{user.logo}}"/>
+        </div>
+        <div class="col-md-5" style="float: right;    margin-top: 0px;">
+            <h4>{{user.fullname}}</h4>
+            <span>{{user.occupation}}</span>
+            <span>{{user.email}}</span>
+            <a href="{{user.link1}}">{{user.link1}}</a>
+            <a href="{{user.link2}}">{{user.link2}}</a>
+
+        </div>
+    </div>
+</div>

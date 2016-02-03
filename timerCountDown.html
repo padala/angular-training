@@ -1,0 +1,38 @@
+<html>
+<head></head>
+<body>
+<div>
+  <input type="datetime-local" value="date" id="datetime"/>
+  <button onclick="startTimer()">Start Timer</button>
+  <div id="resultTimer"></div>
+</div>
+<script>
+
+  function startTimer() {
+    var datetimeSelected = document.getElementById('datetime').value;
+
+    var selectedDatTimeEpoch = (new Date(datetimeSelected)).getTime();
+    var now = (new Date()).getTime();
+    var diff = selectedDatTimeEpoch - now;
+
+    var interval = setInterval(function () {
+	debugger;
+      diff -= 1000;
+	  
+      var op = new Date(diff);
+      op = +op;
+      op = op - 19800000;
+      op = new Date(op);
+
+      document.getElementById('resultTimer').innerHTML = (op.getHours() - 5) + ':' + (op.getMinutes() - 30) + ':' + op.getSeconds();
+      console.log(diff - 19800000);
+      if ((diff - 19800000) <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+
+  }
+
+</script>
+</body>
+</html>

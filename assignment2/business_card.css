@@ -1,0 +1,17 @@
+.ellipsis {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+body{
+	margin: 20px 20px 20px 20px;
+}
+
+.image{
+	max-width: 30%;
+	margin-top: -17px;
+	margin-bottom: -19px;
+}

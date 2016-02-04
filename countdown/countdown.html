@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+	<style>
+	.clockStyle{
+	font-size:50px;
+	margin:0 auto;
+	padding:10px;
+	color:#000;
+	font-weight:bold;
+	text-align:center;
+}
+	</style>
+	
+</head>
+<body>
+	<input id="endDateTime" type="datetime-local">
+	<div class="clockStyle">
+		<span id="days"></span><span>days</span>
+		<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+	</div>
+	<button onclick="buttonClick()">Submit</button>
+</body>
+<script src="countdown.js"></script>
+
+</html>

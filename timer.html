@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+</head>
+<body>
+<input type="datetime-local" id="demo"/>
+<div id="clock">
+    Days: <span class="days"></span><br>
+    Hours: <span class="hours"></span><br>
+    Minutes: <span class="minutes"></span><br>
+    Seconds: <span class="seconds"></span>
+</div>
+    <script>
+        function myFunction()
+        {
+                var d = new Date( document.getElementById("demo").value);
+                var p= d.getTime();
+                console.log(p);
+                var curr= new Date().getTime();
+                console.log(curr);
+                var t=p-curr-(5.5*60*60*1000);
+                var seconds = Math.floor( (t/1000) % 60 );
+                var minutes = Math.floor( (t/1000/60) % 60 );
+                var hours = Math.floor( (t/(1000*60*60)) % 24 );
+                var days = Math.floor( t/(1000*60*60*24) );
+                return {
+                    'total': t,
+                    'days': days,
+                    'hours': hours,
+                    'minutes': minutes,
+                    'seconds': seconds
+                };
+        }
+        function updateClock(){
+            var t = myFunction();
+            console.log(t);
+            var clock=document.getElementById('clock');
+            if(isNaN(t.days)||isNaN(t.hours)||isNaN(t.minutes)||isNaN(t.seconds))
+            {
+                clock.querySelector('.days').innerHTML="";
+                clock.querySelector('.hours').innerHTML="";
+                clock.querySelector('.minutes').innerHTML="";
+                clock.querySelector('.seconds').innerHTML="";
+            }
+            else{
+                clock.querySelector('.days').innerHTML=t.days;
+                clock.querySelector('.hours').innerHTML=t.hours;
+                clock.querySelector('.minutes').innerHTML=t.minutes;
+                clock.querySelector('.seconds').innerHTML=t.seconds;}
+
+                if(t.total<=0){
+                clearInterval(timeinterval);
+            }
+        }
+        var timeinterval = setInterval(updateClock,1000);
+
+    </script>
+</body>
+</html>

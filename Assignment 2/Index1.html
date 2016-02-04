@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script src="countdown2.js"></script> 
+</head>
+<body>
+<div ng-app="myApp" ng-controller="countdowncontroller">
+  Timer End (date and time):
+  <input type= "datetime-local" ng-model="dateInput" ng-change="inputChange()">
+  &nbsp;
+  <div class="countDown">
+           <span id="days" ng-bind="Time.days">00</span>     <!-- Remaining Days,id="days"-->
+           <span id="hours" ng-bind="Time.hours">00</span>    <!-- Remaining hours ,id="hours"-->
+           <span id="minutes"ng-bind="Time.minutes">00</span>  <!-- Remaining minutes,id="minutes"-->
+           <span id="seconds"ng-bind="Time.seconds">00</span>  <!-- Remaining secounds,id="secounds"-->
+</div>
+</div>
+</body>
+</html>

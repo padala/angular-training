@@ -1,0 +1,42 @@
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="timer_custom.css">
+</head>
+<body ng-app="timer_countdown">
+<div id="form" class="form" ng-controller="timer_controller">
+<div>
+<div>
+	Date:<input type="date" name="date" id="date" class="center" ng-change="changed_timer('date')"  ng-model="given_date"><br>
+	</div>
+<div>
+	<input id="time" type="time" step="1" style="margin-left: 31px;" ng-change="changed_timer('time')" ng-model="given_timer">
+</div>
+
+</div>
+
+	<div class="timer">
+		days<br><div  id="days">{{days}}</div> 
+	</div>
+<div class="timer">
+		month<br><div  id="month">{{month}}</div> 
+	</div>
+<div class="timer">		hours<br><div  id="hours">{{hours}}</div> 
+	</div>
+<div class="timer">		minutes<br><div  id="minutes">{{minutes}}</div> 
+	</div>
+<div class="timer">		seconds<br><div  id="seconds">{{seconds}}</div> 
+	</div>
+	
+</div>
+	<!-- month<div type="textbox" id="month"></div> 
+	hours<div type="textbox" id="hours"></div> 
+	minutes<div type="textbox" id="minutes"></div> 
+	seconds<div type="textbox" id="seconds"></div> -->
+
+
+	<script src="libs-angular.js">
+	</script>
+</body>
+</html>

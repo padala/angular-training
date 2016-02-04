@@ -9,11 +9,12 @@ var given_date = mydocument.getElementById("date");
 var given_time = mydocument.getElementById("time");
 
 var changing_time = 0;
+var interval_callback = false;
 
 if (given_date.value == "")
     changing_time = (new Date()).getTime();
 else
-    given_date.valueAsNumber;
+   changing_time = given_date.valueAsNumber;
 
 input_form.addEventListener("change", changed_inputs)
 
@@ -26,6 +27,9 @@ Event listner for both date and time input fields
 function changed_inputs(e) {
 
     e.preventDefault();
+
+    if(interval_callback)
+       stop_interval();
 
     var type = e.target.getAttribute("id");
 
@@ -51,8 +55,7 @@ function changed_inputs(e) {
     }
 
     //setinterval()
-    var interval_callback = setInterval(function() {
-
+    interval_callback = setInterval(function() {
 
         var milliseconds = changing_time;
 
@@ -84,9 +87,8 @@ function changed_inputs(e) {
         mydocument.getElementById("month").innerHTML = parseInt(month);
 
         changing_time -= 1000;
-        if (changing_time < 0) {
-            clearInterval(interval_callback);
-        }
+        if (changing_time < 0)  
+            stop_interval();
 
     }, 1000)
 
@@ -114,3 +116,12 @@ function add_to_epoch() {
     changing_time += (minutes * 60000);
     changing_time += (seconds * 1000);
 }
+
+/**
+Clear intervals
+**/
+function stop_interval(){
+    clearInterval(interval_callback);
+            interval_callback = false;
+}
+

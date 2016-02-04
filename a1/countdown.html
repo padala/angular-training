@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="count()">
+	<h1>CountDown Timer</h1>
+	<div id="hms">00:01:10</div>
+	<script type="text/javascript">
+		/*document.getElementById('date').value = (new Date()).format("dd/m/yy");*/
+		function count(dateObj) {
+
+			var startTime = document.getElementById('hms').innerHTML;
+			var pieces = startTime.split(":");
+			var time = new Date();    time.setHours(pieces[0]);
+			time.setMinutes(pieces[1]);
+			time.setSeconds(pieces[2]);
+			var timedif = new Date(time.valueOf() - 1000);
+			var newtime = timedif.toTimeString().split(" ")[0];
+			document.getElementById('hms').innerHTML=newtime;
+			console.log(pieces[0]+"-"+pieces[1]+"-"+pieces[2])
+				if( pieces[2] == 0)
+					clearInterval(x);
+		}
+		var x=setInterval(function(){ count(); }, 1000);
+	</script>
+</body>
+</html> 
+

@@ -1,0 +1,65 @@
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-4">
+        <form class="form-horizontal">
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Full Name :</label>
+                <div class="col-sm-7" >
+                    <input class="form-control" id="fullname" ng-model="user.fullname"  type="text"  placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Occupation :</label>
+                <div class="col-sm-7">
+                    <input class="form-control sud" ng-model="user.occupation"  type="text"  placeholder="Occupation">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Email :</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.email"  type="text"  placeholder="email">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Link1 :</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.link1"  type="text"  placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Link2 :</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.link2"  type="text"  placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-5 control-label">Company Logo :</label>
+                <div class="col-sm-7">
+                    <input class="form-control" ng-model="user.logo"  type="text"  placeholder="Full Name">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8 ">
+        <div class="row">
+            <div class="right-block">
+                <div class="card">
+                    <div class="col-sm-6">
+                        <img ng-src={{user.logo}}>
+                    </div>
+                    <div class="col-sm-6 card-right">
+                        <span class="span1">{{user.fullname}}</span>
+                        <span class="span2">{{user.occupation}}</span>
+                        <hr/>
+                        <span class="span3"><a>{{user.link1}}</a></span>
+                        <span class="span3"><a>{{user.link2}}</a></span>
+                        <ul>
+                            <a><li class="glyphicon glyphicon-alert" aria-hidden="true"></li></a>
+                            <a><li class="glyphicon glyphicon-alert" aria-hidden="true"></li></a>
+                            <a><li class="glyphicon glyphicon-alert" aria-hidden="true"></li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

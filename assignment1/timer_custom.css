@@ -1,0 +1,20 @@
+.timer{
+	float: left;
+    width: 80.328;
+    height: 43px;
+    padding-left: 42px;
+    margin: 50px 5px 26px 100px;
+}
+
+.form{
+	    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+.center{
+	    margin-bottom: 10px;
+    margin-left: 23px;
+}
+}

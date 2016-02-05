@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="angular.min.js"></script>
+<script src="businesscard1.js"></script>
+<style>
+.container{
+margin:20px;
+}
+label{
+display:inline-block;
+width:140px;
+
+}
+#textbox{
+border: 2px solid #2F2B62;
+border-radius: 25px;
+}
+#details{
+float:left;
+height:350px;
+width:200px;
+margin-left:180px;
+}
+.opdetails{
+float:left;
+margin-left:50px;
+align:centre;
+font-style: oblique;
+line-height:90%;
+}
+.image{
+float:left ;
+margin:40px 0px 0px 10px;
+
+}
+.box{
+width:450px;
+float:left;
+margin:20px 0px 0px 30px;
+border: 2px solid #2F2B62;
+border-radius: 35px;
+background-color:#F1592A;!important								
+}
+#save{
+margin: 230px 0px 10px 0px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="businesscntrl">
+<div class="container">
+<div id="details" >
+<div>
+<label><b>Full Name</b></label> 
+<input type="text" id="textbox" placeholder="Full Name" ng-model="name">
+</div><br>
+<div>
+<label><b>Occupation</b></label>
+ <input type="text"id="textbox" placeholder="Occupation" ng-model="occ">
+ </div><br>
+ <div>
+<label><b>Email</b></label>
+<input type="email" id="textbox" placeholder="Email" ng-model="email">
+</div><br>
+<div>
+<label><b>Personal Link 1</b></label>
+<input type="text" id="textbox" placeholder="Link1" ng-model="personallink1">
+</div><br>
+<div>
+<label><b>Personal Link 2</b></label>
+<input type="text" id="textbox" placeholder="Link2" ng-model="personallink2">
+</div><br>
+<div>
+<label><b>Company Logo</b></label> 
+<input type="text" id="textbox" placeholder="logo" ng-model="logo">
+</div>
+
+</div>
+<div class="box" >
+<div class="image">
+<img width="150" height="100" ng-src="{{logo}}"</img>
+</div>
+<div class="opdetails">
+<p><font size="5" color="#2F2B62"/>{{name}}</p>
+<p><font size="4" color="black">{{occ}}</p>
+<p><font size="3" color="#2F2B62">{{email}}</p>
+<p><a href="http://www.google.com" target="_blank">{{personallink1}}</a></p>
+<p><a href="http://www.syamsandeep38@facebook.com" target="_blank">{{personallink2}}</a></p>
+</div>
+</div>
+</div>
+<input type="button" id="save" ng-click="save()" value="save"  >
+<table style="width:50%">
+  <tr>
+    <th>Fullname</th>
+    <th>Occupation</th>		
+    <th>Email</th>
+  </tr>
+  <tr ng-repeat="x in details">
+    <td>{{name}}</td>
+    <td>{{occ}}</td>		
+    <td>{{email}}</td>
+  </tr>
+  
+</table>
+</body>

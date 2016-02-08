@@ -1,0 +1,156 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+angular.module("myApp",[]).service('usersListService',function(){
+		
+		var usersList=[];
+		var result;
+		 this.addUser=function(user){	
+				usersList.push(user);
+			return usersList;
+	}
+  }).controller('cardCtrl',['$scope','usersListService',function($scope,usersListService){
+  $scope.users=[];
+   $scope.user={
+	
+		fullName:'Vamshi',
+		occupation:'Software Engineer',
+		email:'vk@gmail.com',
+		personalLink:'www.google.com',
+		personalLink2:'www.facebook.com',
+		logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/General_Electric_logo.svg/2000px-General_Electric_logo.svg.png'
+  }
+  	$scope.saveButton=true;
+	$scope.editButton=false;
+  $scope.onSaveClick=function(){
+		var store=usersListService.addUser(angular.copy($scope.user));
+		if(typeof store=='string'){
+		alert(store);
+		}else{
+		$scope.users=store;
+		}
+		
+  };
+   $scope.removeRow = function(index){
+    
+    $scope.users.splice( index, 1);
+    
+    if ($scope.users.length == 0){
+      $scope.users = [];
+    }
+  };
+  $scope.onLoadClick=function(index){
+   var usersObject=angular.copy($scope.users);
+   $scope.user=usersObject[index];
+   $scope.flag=true;	
+  };
+  var me=this;
+  $scope.onEditClick=function(index){
+  var usersObject=angular.copy($scope.users);
+   $scope.user=usersObject[index];
+   $scope.flag=false;
+	me.index=index;
+	$scope.saveButton=false;
+	$scope.editButton=true;
+  }
+ $scope.updateClick=function(){
+ $scope.users[me.index]=$scope.user;
+ $scope.saveButton=true;
+ $scope.editButton=false;
+ 
+ }
+  }]);
+  
+   
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="cardCtrl">
+	<header>
+	
+	</header>
+	<article class="article" >
+		<aside class="left-section">
+		<form  ng-name="cardForm">
+		<div class="widget">
+			<label>Full Name</label>
+			<input type="text" ng-model="user.fullName"  ng-disabled=flag>
+			
+		</div>
+		<div class="widget">
+			<label>Occupation</label>
+			<input type="text" ng-model="user.occupation" ng-disabled=flag>
+		</div>
+		<div class="widget">
+			<label>Email</label>
+			<input type="email" ng-model="user.email" ng-disabled=flag>
+		</div>
+		<div class="widget">
+			<label>Personal Link1</label>
+			<input type="text" ng-model="user.personalLink" ng-disabled=flag>
+		</div>
+		<div class="widget">
+			<label>Personal Link2</label>
+			<input type="text" ng-model="user.personalLink2" ng-disabled=flag>
+		</div>
+		<div class="widget">
+			<label>Company logo</label>
+			<input type="text" ng-model="user.logo" ng-disabled=flag>
+		</div>
+		</form>
+		</aside>
+		<aside class="right-section">
+		  <div class="logo-container">
+				<div class="company-logo">
+					<img class="logo" ng-src="{{user.logo}}" />
+				</div>
+			</div>			
+			<div class="details-container">				
+					<div id="fullName"><span>{{user.fullName}}</span></div>
+					<div id="occupation"><span>{{user.occupation}}</span></div>					
+					<div id="email"><span>{{user.email}}</span></div>
+					<div id="website"><span>{{user.personalLink}}</span></div>
+					<div id="website"><span>{{user.personalLink2}}</span></div>				
+			</div>
+			<div class="clear"></div>
+			
+		</aside>
+		<div class="clear"></div>
+		<div style="text-align:right;">
+			<button class="saveButton" ng-show=saveButton ng-click="onSaveClick()">Save</button>
+				<button class="updateButton" ng-show=editButton ng-click="updateClick()">Update</button>
+		</div>
+		
+	</article>
+	<div class="clear"></div>
+	<table class="table">
+	<tr>
+		<th>S.No</th>
+		<th>Name</th>
+		<th>Occupation</th>
+		<th>Email</th>
+		<th>Personal Link</th>
+		<th>Personal Link2</th>
+		<th>Action</th>
+		
+	</tr>
+	<tr ng-repeat="user in users">
+		<td>{{$index}} <span ng-if="$index==0">th</span><span ng-if="$index==1">st</span><span ng-if="$index==2">nd</span><span ng-if="$index==3">rd</span><span ng-if="$index>4">th</span></td>
+		<td>{{user.fullName}}
+		</td>
+		<td>{{user.occupation}}
+		</td>
+		<td>{{user.email}}
+		</td>
+		<td>{{user.personalLink}}
+		</td>
+		<td>{{user.personalLink2}}
+		</td>
+		
+		<td><button class="delete" ng-click="removeRow($index)">Delete</button><button class="load" ng-click="onLoadClick($index)">Load</button><button class="edit" ng-click="onEditClick($index)">Edit</button></td>
+	</tr>
+</table>
+</body>
+</html>

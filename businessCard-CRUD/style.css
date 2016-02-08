@@ -1,0 +1,147 @@
+html,body,header,article,aside,div,section,span{
+margin:0;
+padding:0;
+}
+header{
+height:100px;
+background-color:grey;
+}
+.widget{
+margin-bottom:10px;
+
+}
+.company-logo{
+	width: 100px;
+	height: 100px;
+	background: white;
+	border-radius: 50px;
+	text-align:center;
+	float:right;
+}
+.left-section{
+float:left;
+
+
+}
+.right-section{
+float:right;
+background-color:grey;
+border:1px solid blue;
+box-shadow: 5px 5px 5px #888888;
+padding:20px;
+}
+.article{
+padding:10px;
+margin:0 auto;
+width:900px;
+}
+
+
+.details-container{
+float:right;
+margin:20px;
+
+}
+.logo-container{
+float:left;
+}
+
+.logo{
+width:100px;
+height:100px;
+}
+#fullName{
+color:blue;
+font-weight:bold;
+font-size:20px;
+margin-bottom:10px;
+
+
+
+}
+.clear{
+	clear:both;
+	
+}
+table {
+    border-collapse: collapse;
+	
+	margin:20px 0 20px 40px;
+	
+}
+
+table, th, td {
+    border: 1px solid black;
+	padding:20px;
+}
+.saveButton{
+ background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+.updateButton{
+ background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 22px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+}	
+.delete{
+background-color: #f44336; 
+    border: none;
+    color: black;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;	
+	
+	
+}
+.edit{
+	background-color: #008CBA; 
+    border: none;
+    color: black;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	margin-right:10px;
+	
+}
+.load{
+	background-color: #e7e7e7; 
+    border: none;
+    color: black;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	margin:0 10px;
+	
+}
+input{
+	
+	width:300px;
+	padding:8px;
+	border-radius:5px;
+}
+label{
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-weight:bold;
+
+}​
+
+

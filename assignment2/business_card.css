@@ -2,7 +2,7 @@
   text-overflow: ellipsis;
 
   /* Required for text-overflow to do anything */
-  white-space: nowrap;
+  white-space: now-wrap;
   overflow: hidden;
 }
 
@@ -14,4 +14,18 @@ body{
 	max-width: 30%;
 	margin-top: -17px;
 	margin-bottom: -19px;
+}
+
+.ellipsis table, th, td {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+table { 
+    table-layout:fixed; 
+}
+table tr {
+    height: 20px;
 }

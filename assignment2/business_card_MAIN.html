@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Business Card</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="modules/business_card.js"></script>
+      <script src="services/local_storage_service.js"></script>
+      <script src="controllers/contact_controller.js"></script>
+      <script src="misc/filters.js"></script>
+      <script src="directives/directives.js"></script>
+      
+
+      <link rel="stylesheet" type="text/css" href="business_card.css">
+   </head>
+   <!-- 
+      References from http://www.w3schools.com/bootstrap/exercise.asp?filename=exercise_panels4
+       -->
+   <body ng-app="business_card">
+      
+
+      <div ng-controller="card" >
+      <div class="container col-xs-4" >
+         <!-- Add something here -->
+         <div class="panel panel-default ">
+            <div class="panel-heading ">Full name</div>
+            <div class="panel-body ">
+               <input ng-disabled=is_disabled type="text" ng-model="contact.name" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+            </div>
+         </div>
+         <div class="panel panel-default">
+            <div class="panel-heading">Email</div>
+            <div class="panel-body ">
+               <input type="text" ng-disabled=is_disabled ng-model="contact.email" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+            </div>
+         </div>
+         <div class="panel panel-default">
+            <div class="panel-heading">Occupation</div>
+            <div class="panel-body ">
+               <input type="text" ng-disabled=is_disabled ng-model="contact.occupation" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+            </div>
+         </div>
+         <div class="panel panel-default">
+            <div class="panel-heading">Image</div>
+            <div class="panel-body ">
+               <input type="text" ng-disabled=is_disabled ng-model="contact.image_src" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+               <!-- <img  ng-model="image_src" class="ng-pristine ng-valid ng-touched form-control  ng-binding"> -->
+            </div>
+         </div>
+         <!-- End something here -->
+      </div>
+      <div class="container col-xs-4 col-xs-offset-2 "  >
+         <div class="row jumbotron ">
+            <div >
+               <div class="text-center"><img  src="{{contact.image_src}}" ng-model="image_src" class="image"></div>
+            </div>
+            <div>
+               <div >
+                  <h2 class="text-center ellipsis" ng-model="name">{{contact.name}}</h2>
+               </div>
+            </div>
+            <div >
+               <div class="text-center ellipsis">
+                  <a ng-href="{{email}}" ng-model="email" href="mailto:{{contact.email}}">{{contact.email}}</a>
+               </div>
+               <div >
+                  <div>
+                     <h4 class="text-center ellipsis" ng-model="occupation">{{contact.occupation}}</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="save" style="float:right" >
+            <button type="button" class="btn btn-success col-xs-offset-5" toggle-class="save" ng-click="save_model()">Save</button>
+         </div>
+      </div>
+
+
+      <div class="container col-sm-8" style="float: left;margin-top: 3%;" ng-model="contacts">
+         <table class="table table-hover">
+            <thead>
+               <tr>
+                  <th style="width: 11%;">S No.</th>
+                  <th style="width: 20%;">Full Name</th>
+                  <th style="width: 30%;">Email</th>
+                  <th style="width: 20%;">Occupation</th>
+                  <th style="width: 20%;">Image</th>
+                  <th style="width: 8%;"></th>
+                  <th style="width: 8%;"></th>
+                  <th style="width: 10%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr  ng-repeat="contact in contacts">
+                  <td data="{{contact}}">{{contact.KEY_INDEX|serial_check}}</td>
+                  <td>{{contact.name}}</td>
+                  <td>{{contact.email}}</td>
+                  <td>{{contact.occupation}}</td>
+                  <td class="text-center ellipsis">{{contact.image_src}}</td>
+                  <td><button class="btn btn-primary btn-xs" ng-click="edit_contact(contact.KEY_INDEX)" >
+                  <span class="glyphicon glyphicon-pencil"></span></button></td>
+                  <td><button class="btn btn-danger btn-xs" ng-click="delete_contact(contact.KEY_INDEX)">
+                  <span class="glyphicon glyphicon-trash"></span></button></td>
+                  <td><button class="btn btn-primary btn-xs" ng-click="load_contact(contact.KEY_INDEX)" >Load
+                  </button></td>
+                  
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      </div>
+      <script type="text/javascript"></script>
+   </body>
+</html>

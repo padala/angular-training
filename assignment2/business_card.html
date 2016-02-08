@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Business Card</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="business_card.css">
+  
+  
+
+</head>
+
+
+<!-- 
+References from http://www.w3schools.com/bootstrap/exercise.asp?filename=exercise_panels4
+ -->
+
+<body ng-app="business_card">
+<div ng-controller="card" >
+<div class="container col-xs-4">
+  <!-- Add something here -->
+    <div class="panel panel-default ">
+      <div class="panel-heading ">Full name</div>
+      <div class="panel-body ">
+      	<input type="text" ng-model="name" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Email</div>
+       <div class="panel-body ">
+      	<input type="text" ng-model="email" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Occupation</div>
+       <div class="panel-body ">
+      	<input type="text" ng-model="occupation" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Image</div>
+       <div class="panel-body ">
+       <input type="text" ng-model="image_src" class="ng-pristine ng-valid ng-touched form-control  ng-binding">
+      	<!-- <img  ng-model="image_src" class="ng-pristine ng-valid ng-touched form-control  ng-binding"> -->
+      </div>
+    </div>
+  <!-- End something here -->
+</div><div class="container col-xs-4 col-xs-offset-2 " >
+    <div class="row jumbotron ">
+        
+ <div >
+<div class="text-center ellipsis"><img  src="{{image_src}}" ng-model="image_src" class="image"></div>
+    </div>
+
+        <div>
+      
+      <div ><h2 class="text-center ellipsis" ng-model="name">{{name}}</h2></div>
+    </div>
+
+    <div >
+      
+      <div class="text-center ellipsis">
+<a ng-href="{{email}}" ng-model="email" href="mailto:{{email}}">{{email}}</a>
+
+
+      </div>
+
+    <div >
+      <div><h4 class="text-center ellipsis" ng-model="occupation">{{occupation}}</h4></div>
+    </div>
+    </div>
+</div>
+  
+  </div>
+
+
+
+<!-- <div ng-controller="card" >
+
+
+	<input type="text" name="date" id="date" ng-model="name" >{{name}}
+	</input><br>
+
+</div> -->
+</div>
+
+<script type="text/javascript">
+	var app = angular.module("business_card", []);
+
+//app.controller("myCtrl", function($scope) {
+
+//angular.module('card_bind', [])
+app.controller('card',function($scope){
+
+	$scope.name="Bhasuri Kona";
+	$scope.email="kbhasuri@gmail.com";
+	$scope.occupation="Developer";
+	$scope.image_src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Panda_Mark.svg/600px-Panda_Mark.svg.png";
+})
+
+</script>
+
+</body>
+</html>

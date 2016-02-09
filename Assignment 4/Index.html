@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+<script src="angular.min.js"></script>
+<script src="Bussinesscard.js"></script>
+<style>
+
+#fcuk{
+text-align: center;
+color:#2F2B62;
+font-style:oblique;
+font-size:30px;
+padding: 0px !important;
+margin: 0px !important;
+margin-top: 30px !important;
+}
+.container{
+margin:20px;
+}
+label{
+display:inline-block;
+width:140px;
+
+}
+#textbox{
+border: 2px solid #2F2B62;
+border-radius: 25px;
+height: 20px;
+margin-top: 10px;
+text-align:center;
+
+}
+.details{
+float:left;
+height:250px;
+width:400px;
+margin-left:180px;
+
+}
+.opdetails{
+float:left;
+margin-left:50px;
+align:centre;
+font-style: oblique;
+line-height:90%;
+}
+.image{
+float:left ;
+margin:40px 0px 0px 10px;
+
+}
+.box{
+width:500px;
+height:200px;
+float:left;
+margin:20px 0px 0px 30px;
+border: 2px solid #2F2B62;
+border-radius: 35px;
+background-color:#F1592A;!important	
+box-shadow: 5px 5px 5px #888888;							
+}
+#save{
+margin: 230px 0px 10px 0px;
+
+}
+.datacolumn{
+margin-left:200px;
+}
+table, th, td {
+    border: 2px solid #2F2B62;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+	text-align:center
+}
+</style>
+</head>
+<body ng-controller="businesscntrl">
+<p id="fcuk"><b>Bussiness Card Generator</b></p>
+<div class="container">
+ <form class="details">
+        <label><b>Name</b></label>
+        <input type="text" id="textbox" placeholder="Name" name="name" ng-disabled = disable  ng-model="newcontact.name" />
+		<br/>
+		<label><b>Occupation</b></label>
+        <input type="text"id="textbox" placeholder="Designation" ng-disabled = disable ng-model="newcontact.desg">
+		<br/>
+        <label><b>Email</b></label>
+        <input type="text" id="textbox" placeholder="email" name="email" ng-disabled = disable ng-model="newcontact.email" />
+		<br/>
+		<label><b>Personal Link 1</b></label>
+        <input type="text" id="textbox" placeholder="Link1" ng-disabled = disable ng-model="newcontact.personallink1">
+		<br/>
+		<label><b>Personal Link 2</b></label>
+        <input type="text" id="textbox" placeholder="Link2" ng-disabled = disable ng-model="newcontact.personallink2">
+		<br/>
+		<label><b>Company Logo</b></label> 
+        <input type="text" id="textbox" placeholder="logo" ng-disabled = disable  ng-model="newcontact.logo">
+        <br/>
+        <input type="hidden" ng-model="newcontact.id" />
+		</form>
+	
+<div class="box">
+<div class="image">
+<img width="150" height="100" ng-src="{{newcontact.logo}}"</img>
+</div>
+<div class="opdetails">
+<p><font size="5" color="#2F2B62"/>{{newcontact.name}}</p>
+<p><font size="4" color="black">{{newcontact.desg}}</p>
+<p><font size="3" color="#2F2B62">{{newcontact.email}}</p>
+<p><a href="http://www.google.com" target="_blank">{{newcontact.personallink1}}</a></p>
+<p><a href="http://www.syamsandeep38@facebook.com" target="_blank">{{newcontact.personallink2}}</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input type="button" value="Save" id="save" ng-click="saveContact()"/>
+    <table class="datacolumn" style="width:70%">
+        <thead>
+            <tr>
+			<th>S.No</th>
+			<th>Name</th>
+			<th>Designation</th>
+			<th>Email</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in contacts">
+			    <td>{{$index+1}}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.desg }}</td>
+                <td>{{ contact.email }}</td>
+                <td> <a href="javascript:void(0)" ng-click="edit(contact.id)">Edit</a> | <a href="javascript:void(0)" ng-click="delete(contact.id)">Delete</a> | <a href="javascript:void(0)" ng-click="load(contact.id)">Load</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

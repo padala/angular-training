@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="sample">
+<head>
+	<title>Sample Page</title>
+	<link rel="stylesheet" type="text/css" href="design.css">
+  <script data-require="jquery@*" data-semver="2.1.4" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="logic.js"></script>
+</head>
+<body ng-controller="SampleController" style="background-color:#E6E6FA">
+
+<div id="content">
+  <div class="left w50">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+  <label>Full Name :</label>
+  <input type="text" ng-model="model.name" />
+  </div>
+  <br>
+  <br>
+  <div>
+  	<label>Ocuupation :</label>
+  <input type="text" ng-model="model.occupation"/>
+  </div>
+  <br>
+  <br>
+  <div>
+  	<label>Email :</label>
+  <input type="email" ng-model="model.email"/>
+  </div>
+  <br>
+  <br>
+  <div>
+  	<label>Personal Link1 :</label>
+  <input type="text" ng-model="model.link1"/>
+  </div>
+  <br>
+  <br>
+  <div>
+  	<label>Personal Link2 :</label>
+  <input type="text" ng-model="model.link2"/>
+  </div>
+  <br>
+  <br>
+  <div>
+  	<label>Company Logo :</label>
+  <input type="text" ng-model="model.link3"/>
+  </div>
+
+  </div>
+  
+  	
+<buss-card></buss-card>
+
+</div> 
+
+Users 
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Occupation</th>
+<th>Action</th>
+</tr>
+
+<tr ng-repeat='user in  bag'>
+<td>{{ user.name }}</td>
+<td>{{ user.email }}</td>
+<td>{{ user.occupation }}</td>
+<td>
+  <button class="btn btn-success" ng-click="editMe(user)">Edit</button>
+   <button class="btn btn-success" ng-click="deleteMe(user)">Delete</button>
+</td>
+</tr> 
+</table>
+
+</body>
+</html>

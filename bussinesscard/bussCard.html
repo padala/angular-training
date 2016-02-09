@@ -1,0 +1,36 @@
+      <div class="left w50 ">
+        <br>
+        <br>
+        <br>
+        <div class="star">
+        
+        <div>
+        <img ng-src="{{model.link3}}" alt="some_text" style="width:50px;height:50px;">
+        </div>
+
+        	<div>
+        		<h1>{{model.name}}</h1>
+        	</div>
+        	
+        	<div>
+        		{{model.occupation}}
+        	</div>
+
+        	<div>
+        		{{model.email}}
+        	</div>
+
+        	<div>
+        		{{model.link1}}
+        	</div>
+
+        	<div>
+        		{{model.link2}}
+        	</div>
+            <br/>
+          <div ng-show="!!model.status"> <h4>{{model.status}}</h4></div>
+       
+        <button class="btn btn-success" ng-show="!model.status" ng-click="saveMe(model)">Save Me</button>
+          </div>
+      </div>
+    

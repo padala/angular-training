@@ -1,0 +1,51 @@
+html {
+	font-size: 62.5%;
+}
+body {
+	background-color: white;
+	color: black;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 1.4em; /* equiv 14px */
+	line-height: 1.5; /* adapt to your design */
+}
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+	word-wrap: break-word;
+}
+.left {
+    float: left;
+}
+.w50 {
+    width: 50%;
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}
+.star {
+    background-color: lightgrey;
+    width: 300px;
+    padding: 25px;
+    border: 0px solid navy;
+    margin: 0px;
+}
+table, th , td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+   }
+   
+   table tr:nth-child(odd) {
+      background-color: #f2f2f2;
+   }
+
+   table tr:nth-child(even) {
+      background-color: #ffffff;
+   }

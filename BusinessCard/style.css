@@ -1,0 +1,88 @@
+*{
+margin:0;
+padding:0;
+}
+body{width:1200px;margin:0 auto}
+header{
+height:100px;
+background-color:#cccccc;
+}
+.widget{
+margin-bottom:10px;
+
+}
+.company-logo{
+	width: 100px;
+	height: 100px;
+	background: white;
+	border-radius: 50px;
+	text-align:center;
+	float:right;
+}
+.left-section{
+float:left;
+
+
+}
+.right-section{
+    float: left;
+    background-color: #cccccc;
+    border: 1px solid black;
+    padding: 20px;
+    margin-left: 80px;
+}
+.article{
+padding:10px;
+margin:0 auto;
+width:900px;
+}
+
+
+.details-container{
+float:right;
+margin:20px;
+
+}
+.logo-container{
+float:left;
+}
+
+.logo{
+width:100px;
+height:100px;
+}
+#fullName{
+color:black;
+font-weight:bold;
+font-size:20px;
+margin-bottom:10px;
+
+
+
+}
+input{
+	
+	width:300px;
+	padding:8px;
+	border-radius:5px;
+}
+label{
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-weight:bold;
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+.btn{
+    float: right;
+    margin-right: 160px;
+    margin-top: 30px;
+}

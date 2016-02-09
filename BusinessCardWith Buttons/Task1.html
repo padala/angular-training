@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="employee.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body ng-app="myApp" ng-controller="myCntrl" style="margin:100px;background:#ebebe0">
+<h1 style="margin-left:300px; font-style:oblique">Business Card</h1>
+<form name="myForm" role="form" ng-submit="addRow()">
+<div class="details" >
+<div>
+<label>Full Name</label> 
+<input type="text" placeholder="Full Name" ng-model="user.name" ng-disabled=value>
+</div><br>
+<div>
+<form name="filterform">
+<label>Occupation</label>
+ <input type="text" placeholder="Occupation" ng-model="user.occ" ng-disabled=value required my-directive>
+
+ <span style="color:red" ng-show="filterform.user.occ.$valid">Occupation mustbe software</span>
+</form>
+ </div><br>
+ <div>
+<label>Email </label>
+<input type="text" placeholder="Email" ng-model="user.email"ng-disabled=value>
+</div><br>
+<div>
+<label>Personal Link 1 </label>
+<input type="text" placeholder="Link1" ng-model="user.pl1"ng-disabled=value>
+</div><br>
+<div>
+<label>Personal Link 2 </label>
+<input type="text" placeholder="Link2" ng-model="user.pl2"ng-disabled=value>
+</div><br>
+<div>
+<label>Company Logo</label> 
+<input type="text" placeholder="logo" ng-model="user.logo"ng-disabled=value>
+</div>
+<div>
+<input type="hidden" ng-model="user.id" />
+</div>
+<div>
+<input type="submit" value="save" style="float:right;margin-top:10px;margin-bottom:10px"/>
+</div>
+
+</div>
+</form>
+<div class="box">
+<div class="image">
+<img width="130" height="130" ng-src="{{user.logo}}"</img>
+</div>
+<div class="opdetails">
+<p><font size="5" color="blue"/>{{user.name|uppercase}}</p>
+<p><font size="4" color="black">{{user.occ}}</p>
+<p><font size="3" color="blue"></font>{{user.email}}</p>
+<p><a href="http://{{user.pl1}}">{{user.pl1}}</a></p>
+<p>{{user.pl2}}</p>
+</div>
+</div>
+<div>
+
+<table class="table1" style="width:100%">
+<tbody>
+  <tr>
+	<th><font color="#333300">SlNo</th>
+    <th>Fullname<font color="#333300"></th>
+    <th>Occupation<font color="#333300"></th>		
+    <th>Email<font color="#333300"></th>
+	<th>Action<font color="#333300"></th>
+  </tr>
+  <tr ng-repeat="x in users">
+  <td>{{x.id |titlecase}}</td>
+  <td>{{x.name}}</td>
+  <td>{{x.occ}}</td>
+  <td>{{x.email}}</td>
+  <td><input type="button" class="edit" value="edit" ng-click="editValues(x.id)"></button><input type="button" class="delete" value="delete" ng-click="deleteValues(x.id)" ></button><input type="button" value="load" ng-click="loadValues(x.id)"></button>
+</td>
+
+  </tr>
+  </tbody>
+ </table>
+ </div>
+
+</body>

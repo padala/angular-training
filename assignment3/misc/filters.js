@@ -1,6 +1,8 @@
 app.filter('serial_check', function() {
   return function(input) {
 
+    if(input>10 && input <=20)
+      return input+"th";;
     if(input%10==3)
       return input+"rd";
     if(input%10==2)

@@ -20,6 +20,7 @@ $scope.delete_contact = function(key){
 
 controllers_handler_service.delete_contact(key);
 $scope.update_table();
+$scope.contact.KEY_INDEX--;
 }
 
 $scope.load_contact = function(key){

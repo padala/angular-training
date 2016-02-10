@@ -48,25 +48,25 @@
                <!-- <img  ng-model="image_src" class="ng-pristine ng-valid ng-touched form-control  ng-binding"> -->
             </div>
          </div>
-         <!-- End something here -->
+         <!-- End something here ng-bind-->
       </div>
       <div class="container col-xs-4 col-xs-offset-2 "  >
          <div class="row jumbotron ">
             <div >
-               <div class="text-center"><img  src="{{contact.image_src}}" ng-model="image_src" class="image"></div>
+               <div class="text-center"><img  src="{{contact.image_src}}" class="image"></div>
             </div>
             <div>
                <div >
-                  <h2 class="text-center ellipsis" ng-model="name">{{contact.name}}</h2>
+                  <h2 class="text-center ellipsis" ng-bind="contact.name"></h2>
                </div>
             </div>
             <div >
                <div class="text-center ellipsis">
-                  <a ng-href="{{email}}" ng-model="email" href="mailto:{{contact.email}}">{{contact.email}}</a>
+                  <a ng-href="{{email}}" href="mailto:{{contact.email}}">{{contact.email}}</a>
                </div>
                <div >
                   <div>
-                     <h4 class="text-center ellipsis" ng-model="occupation">{{contact.occupation}}</h4>
+                     <h4 class="text-center ellipsis" ng-bind="contact.occupation"></h4>
                   </div>
                </div>
             </div>
@@ -75,6 +75,11 @@
             <button type="button" class="btn btn-success col-xs-offset-5" toggle-class="save" ng-click="save_model()">Save</button>
          </div>
       </div>
+
+      <div class="form-group col-xs-8">
+  		<label for="usr">Search:</label>
+  		<input type="text" class="form-control" style = "width:20%"id="usr" ng-model="search" >
+	</div>
 
 
       <div class="container col-sm-8" style="float: left;margin-top: 3%;" ng-model="contacts">
@@ -92,7 +97,7 @@
                 </tr>
             </thead>
             <tbody>
-               <tr  ng-repeat="contact in contacts">
+               <tr  ng-repeat="contact in contacts | filter:search | orderBy: 'KEY_INDEX'">
                   <td data="{{contact}}">{{contact.KEY_INDEX|serial_check}}</td>
                   <td>{{contact.name}}</td>
                   <td>{{contact.email}}</td>

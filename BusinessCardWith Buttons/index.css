@@ -1,36 +1,18 @@
-<style>
-.table1 {
-  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+body {
+    background-color: beige;
 }
-
-label{
-display:inline-block;
-width:140px;
-text-align:right;
-font-size:20px;
+.entirePage{
+	width:1200px;
+	margin:0 auto;
 }
-.details{
+.heading
+{
+	text-align:center;
+	font-style:oblique;
+}
+.details
+{
 float:left;
-margin-right:100px;
-
-}
-.opdetails{
-float:left;
-}
-.image{
-float:left ;
-margin:20px;
-}
-.box{
-float:left;
-border: 2px;
-border-style: solid;
-border-color:#e0e0d1;
-border-radius: 25px;
-box-shadow:3px 3px 2px #888888;	
-background-color:darkgrey;
-width: 500px;
-height: 250px;    
 }
 input[type="text"] {
     width: 200px;
@@ -38,15 +20,47 @@ input[type="text"] {
 	padding-left:5px;
 	border-radius:1px;
 }
-::-webkit-input-placeholder
+label{
+display:inline-block;
+width:140px;
+text-align:right;
+font-size:20px;
+}
+.box{
+float:right;
+border: 2px;
+border-style: solid;
+border-color:#e0e0d1;
+border-radius: 25px;
+box-shadow:3px 3px 2px #888888;	
+background-color:darkgrey;
+width: 350px;
+height: 200px;  
+margin-right:50px;  
+}
+.image{
+float:left ;
+margin:20px;
+}
+.save{
+clear:both;
+float:right;
+margin-right:60px;
+}
+.button{
+color:#151313;
+padding: 4px 13px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+margin: 4px 2px;	
+}
+.search
 {
-	color:    #909;
-}
-.edit,.delete{
-margin-right:10px;
-}
-#button{
-margin:230px 0px 10px 0px;
+	clear:both;
+	float:left;
+	margin-bottom:10px;
 }
 table, th, td {
     border: 1px solid black;
@@ -55,4 +69,4 @@ table, th, td {
 th, td {
     padding: 5px;
 }
-</style>
+

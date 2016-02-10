@@ -6,10 +6,13 @@
 <script src="employee.js"></script>
 <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body ng-app="myApp" ng-controller="myCntrl" style="margin:100px;background:#ebebe0">
-<h1 style="margin-left:300px; font-style:oblique">Business Card</h1>
-<form name="myForm" role="form" ng-submit="addRow()">
+<body ng-app="myApp" ng-controller="myCntrl">
+<div class="entirePage">
+<div class="heading">
+<h1>Business Card</h1>
+</div>
 <div class="details" >
+<form name="myForm">
 <div>
 <label>Full Name</label> 
 <input type="text" placeholder="Full Name" ng-model="user.name" ng-disabled=value>
@@ -17,7 +20,7 @@
 <div>
 <form name="filterform">
 <label>Occupation</label>
- <input type="text" placeholder="Occupation" ng-model="user.occ" ng-disabled=value required my-directive>
+ <input type="text" placeholder="Occupation" ng-model="user.occ" ng-disabled=value my-directive>
 
  <span style="color:red" ng-show="filterform.user.occ.$valid">Occupation mustbe software</span>
 </form>
@@ -41,27 +44,31 @@
 <div>
 <input type="hidden" ng-model="user.id" />
 </div>
-<div>
-<input type="submit" value="save" style="float:right;margin-top:10px;margin-bottom:10px"/>
-</div>
-
-</div>
 </form>
+</div>
+<div>
 <div class="box">
 <div class="image">
 <img width="130" height="130" ng-src="{{user.logo}}"</img>
 </div>
 <div class="opdetails">
-<p><font size="5" color="blue"/>{{user.name|uppercase}}</p>
-<p><font size="4" color="black">{{user.occ}}</p>
-<p><font size="3" color="blue"></font>{{user.email}}</p>
-<p><a href="http://{{user.pl1}}">{{user.pl1}}</a></p>
+<p><font size="5"></font>{{user.name|uppercase}}</p>
+<p><font size="4"></font>{{user.occ}}</p>
+<p><font size="3"></font>{{user.email}}</p>
+<p>{{user.pl1}}</a></p>
 <p>{{user.pl2}}</p>
 </div>
 </div>
+<div class="save">
+<button class="button" ng-click="addRow()">Save</button>
+</div>
+</div>
+<div class="search">
+<label>Search</label>
+<input type="text" ng-model="query"/>
+</div>
 <div>
-
-<table class="table1" style="width:100%">
+<table class="table1" width="100%">
 <tbody>
   <tr>
 	<th><font color="#333300">SlNo</th>
@@ -70,7 +77,7 @@
     <th>Email<font color="#333300"></th>
 	<th>Action<font color="#333300"></th>
   </tr>
-  <tr ng-repeat="x in users">
+  <tr ng-repeat="x in users|filter:query">
   <td>{{x.id |titlecase}}</td>
   <td>{{x.name}}</td>
   <td>{{x.occ}}</td>
@@ -82,5 +89,5 @@
   </tbody>
  </table>
  </div>
-
+</div>
 </body>

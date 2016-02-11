@@ -5,6 +5,17 @@
 <script src="angular.min.js"></script>
 <script src="Bussinesscard.js"></script>
 <style>
+#search{
+margin-left:200px;
+}
+#save{
+clear:both;
+width: 60px;
+height: 21px;
+background-color: #2F2B62;
+color: white;
+}
+
 
 #fcuk{
 text-align: center;
@@ -117,7 +128,14 @@ th, td {
 </div>
 </div>
 </div>
+<div>
+<div>
 <input type="button" value="Save" id="save" ng-click="saveContact()"/>
+</div>
+</div>
+ <div id ="search"><label><b>Search</b></label><input type="text" id="textbox" ng-model="query"></div>
+  
+  <br/>
     <table class="datacolumn" style="width:70%">
         <thead>
             <tr>
@@ -129,8 +147,8 @@ th, td {
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="contact in contacts">
-			    <td>{{$index+1}}</td>
+            <tr ng-repeat="contact in contacts | filter: query">
+			    <td>{{$index+1 | suffix }}</td>
                 <td>{{ contact.name }}</td>
                 <td>{{ contact.desg }}</td>
                 <td>{{ contact.email }}</td>
@@ -139,6 +157,7 @@ th, td {
             </tr>
         </tbody>
     </table>
+	
 
 </body>
 </html>

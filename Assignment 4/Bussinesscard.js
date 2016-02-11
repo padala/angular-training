@@ -76,4 +76,20 @@ app.controller('businesscntrl', function ($scope, ContactService) {
 		$scope.disable=true;
 		
 	}
+	})
+	.filter( 'suffix', function() {
+  return function(id) {
+    var j = id % 10,
+        k = id % 100;
+    if (j == 1 && k != 11) {
+        return id + "st";
+    }
+    if (j == 2 && k != 12) {
+        return id + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return id + "rd";
+    }
+    return id + "th";
+}
 });

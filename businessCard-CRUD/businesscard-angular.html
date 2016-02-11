@@ -61,7 +61,28 @@ angular.module("myApp",[]).service('usersListService',function(){
  $scope.editButton=false;
  
  }
-  }]);
+ 
+  }]).filter('serialnumberSuffix', function($filter) {
+  var suffixes = ["th", "st", "nd", "rd"];
+  return function(input) {
+	if(input==11 || input==12 || input ==13){
+		return input+'th';
+	}
+	else{
+	var relevantDigits=input%10;
+	 switch(relevantDigits){
+		case 1: return input+suffixes[1];
+		break;
+		case 2: return input+suffixes[2];
+		break;
+		case 3: return input+suffixes[3];
+		break;
+		default:return input+suffixes[0];
+	 }
+	}
+	
+  };
+});
   
    
 </script>
@@ -90,6 +111,7 @@ angular.module("myApp",[]).service('usersListService',function(){
 		<div class="widget">
 			<label>Personal Link1</label>
 			<input type="text" ng-model="user.personalLink" ng-disabled=flag>
+			
 		</div>
 		<div class="widget">
 			<label>Personal Link2</label>
@@ -111,7 +133,7 @@ angular.module("myApp",[]).service('usersListService',function(){
 					<div id="fullName"><span>{{user.fullName}}</span></div>
 					<div id="occupation"><span>{{user.occupation}}</span></div>					
 					<div id="email"><span>{{user.email}}</span></div>
-					<div id="website"><span>{{user.personalLink}}</span></div>
+					<div id="website"><span><a ng-href="http://{{user.personalLink}}">{{user.personalLink}}</a></span></div>
 					<div id="website"><span>{{user.personalLink2}}</span></div>				
 			</div>
 			<div class="clear"></div>
@@ -137,7 +159,7 @@ angular.module("myApp",[]).service('usersListService',function(){
 		
 	</tr>
 	<tr ng-repeat="user in users">
-		<td>{{$index}} <span ng-if="$index==0">th</span><span ng-if="$index==1">st</span><span ng-if="$index==2">nd</span><span ng-if="$index==3">rd</span><span ng-if="$index>4">th</span></td>
+		<td>{{$index | serialnumberSuffix}} </td>
 		<td>{{user.fullName}}
 		</td>
 		<td>{{user.occupation}}

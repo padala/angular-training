@@ -1,0 +1,26 @@
+
+<html lang="en" ng-app="climateApp"  ng-controller="dataCtrl">
+<link rel="stylesheet" href="app.css">
+<div class="Climate">
+    <p ng-bind="data.city.name"></p>
+    <div  class="day"  ng-repeat="x in data.list">
+    <table  border="2">
+    <tr>
+        <td colspan="3">Date:</td>
+        <td colspan="3">{{x.dt}}</td>
+    </tr>
+    <tr >
+        <td>Temperature Max:</td><td>{{x.temp.max}}</td><td>Temperature Min:</td><td>{{x.temp.min}}</td><td>Humidity:</td><td>{{x.humidity}}</td>
+    </tr>
+    <tr>
+        <td>Wind Speed:</td><td>{{x.speed}}</td><td>Pressure:</td><td>{{x.pressure}}</td><td>Weather:</td>
+        <td ng-repeat="y in x.weather">
+            {{y.description}}&nbsp;
+        </td>
+    </tr>
+</table>
+
+    </div>
+    <br>
+</div>
+</html>

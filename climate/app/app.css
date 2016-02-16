@@ -1,0 +1,68 @@
+/* app css stylesheet */
+body{
+  background-image: url(Blue-Grey-Gradient-Background-6.jpg);
+}
+label{
+  font-size: 30px;
+  color:goldenrod;
+  padding:1px;
+}
+h1{
+  font-size: 50px;
+  padding:1px;
+}
+.mainbody {
+
+  }
+
+.input {
+  right:40%;
+  height:170px;
+  padding:1px;
+}
+.cityList {
+ position: relative;
+  float: left;
+  left: 10px;
+  height:70%;
+  width: 300px;
+}
+
+.cityList_table{
+  width:300px;
+}
+
+.cityList_table,th{
+  background:whitesmoke;
+}
+.climate_show{
+  position: relative;
+  float: left;
+  left: 15px;
+  width: 70%;
+  }
+.climate,p{
+  font-size: 20px;
+  text-align: center;
+  color: aliceblue;
+}
+.day{
+  position: relative;
+  float: left;
+  padding: 10px;
+  border-left-width: 10px;
+  border-bottom-width: 10px;
+  border-right-width: 10px;
+}
+.day,table{
+
+  border:darkblue ;
+  border: 20px;
+
+}
+.day,td{
+
+}
+br{
+  color: darkblue;
+}

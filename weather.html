@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>Today's welcome message is:</p>
+
+<h1>{{myWelcome}}</h1>
+
+</div>
+
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=json&units=metric&cnt=7&appid=44db6a862fba0b067b1930da0d769e98")
+  .then(function(response) {
+      $scope.myWelcome = response.data.list;
+  });
+});
+</script>
+
+</body>
+</html>

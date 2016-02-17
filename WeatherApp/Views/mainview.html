@@ -1,0 +1,36 @@
+
+<div class="entirepage">
+<div class="heading">
+	<h1>Weather App</h1>
+</div>
+	<div class="middlesection">
+<div class="image">
+	<p><img width="130" height="130"
+			src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Weather-rain-thunderstorm.svg/2000px-Weather-rain-thunderstorm.svg.png">
+		</img></p>
+</div>
+<div class="inputdetails">
+<label><b>City Name</b></label>
+        <input type="text" id="textbox" placeholder="City Name" ng-model="user.input" class="ng-pristine ng-valid" autocomplete="off"/>
+		<button class="button" id="addbutton"  ng-click="addCity()">Add</button>
+</div>
+		</div>
+	<div class="table">
+	<table>
+        <thead>
+            <tr>
+			<th>S.No</th>
+			<th>CityName</th>
+			<th>Action</th>
+		</tr>
+			</thead>
+			<tbody>
+            <tr ng-repeat="city in citiesB">
+			    <td>{{$index+1}}</td>
+                <td><a href="#weather/{{city}}">{{city}}</a></td>
+					<td><input type="button" class="delete" value="delete" ng-click="remove(item)" ></td>
+				
+			</tr>
+			</table>
+	</div>
+	</div>

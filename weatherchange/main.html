@@ -1,0 +1,18 @@
+<div ng-controller="MainController">
+	<form name="addcity" ng-submit="add(cityname)">
+    <input type="text" required placeholder="add city" ng-model="cityname"/>
+    <input type="submit" value="ADD"/>
+</form>
+
+<br/>
+<br/>
+<br/>
+<div ng-repeat="name in cityList" style ="color:red;">
+ 
+ {{name}}
+</div>
+
+<div>
+	<input type="button" ng-click="next()" value="Done adding" />
+</div>
+</div>

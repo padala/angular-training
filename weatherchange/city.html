@@ -1,0 +1,45 @@
+<div ng-controller="CityController">
+<div >
+       <span style ="color:blue;" >Select:</span>
+        <select ng-model="cityname" ng-options="cityname for cityname in cityList" ng-change="search(cityname)">
+        </select>
+</div>
+
+    <br/>
+
+
+<div ng-hide=!obj >
+   <div style ="color:yellow;">
+    <div>
+        Name: {{obj.city.name}}
+    </div>
+    <div>
+        Location: {{obj.city.country}}
+        <br/>
+        <br/>
+    </div>
+    <div>
+       <span>Today: {{obj.list[0].dt + "000" | date:'short'}}</span><br/>
+        Min-Temperation on day : {{obj.list[0].temp.min}} <br/>
+        Max-Temperation on day : {{obj.list[0].temp.max}} <br/>
+        <br/>
+    </div>
+    </div>
+ 
+    <div class="row" >
+    <div class="col-md-4" ng-repeat-start="day in obj.list">
+
+        <div  style="background-color:#0099ff;" style ="color:red;">
+            <span>Day: {{day.dt + "000" | date:'short'}}</span> <br/>
+        Min-Temperation on day : {{day.temp.min}} <br/>
+        Max-Temperation on day : {{day.temp.max}}
+        <br/>
+        <br/>
+        </div>
+    </div>
+    <div class="clearfix" ng-if="$index%3==2"></div>
+    <div ng-repeat-end=""></div>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="angularWeatherApp">
+<head lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style/style.css"/>
+</head>
+
+<body class="maincontainer">
+<div ng-view></div>
+<script src="angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&language=en"></script>
+<script src="app.js"></script>
+<script src="controllers/Mainctrl.js"></script>
+<script src="controllers/weather.js"></script>
+<script src="Services/citiesFact.js"></script>
+</body>
+
+</html>

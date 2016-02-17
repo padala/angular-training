@@ -1,0 +1,19 @@
+<div class="radio">
+  <input type="radio" name="temp" value="celcius" ng-click="tempChange()" size="8">To Celsius
+  <input type="radio" name="temp" value="fahrenheit" ng-click="tempChange1()" size="8">To Fahrenheit
+  <select  ng-options="o for o in citiesC" ng-model="citiesC" ng-change="cityChange(citiesC)" id="dropdown">
+  </select>
+</div>
+<div class="forcastbox" ng-repeat="info in weatherdetails.list">
+<div id="forcastimage">
+<img src="style/image1.jpg" alt="Smiley face" width="100" height="100">
+</div>
+  <div class="weatherdetails">
+  <h2>{{info.dt*1000|date:'EEEE'}}</h2>
+  <p>Temp:{{info.temp.day }}</p>
+  <p>Max Temp:{{info.temp.max }}</p>
+  <p>Min Temp:{{info.temp.min }}</p>
+  <p>Humidity:{{info.humidity}}</p>
+  <p>Description:{{info.weather[0].description}}</p>
+</div>
+</div>

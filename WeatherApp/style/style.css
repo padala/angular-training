@@ -1,0 +1,77 @@
+* {
+margin: 0;
+padding: 0;
+}
+.maincontainer{
+background-color:darkgrey;
+}
+#textbox{
+    border: 2px solid #6C9496;
+    border-radius: 25px;
+    height: 29px;
+    width: 230px;
+    margin-top: 10px;
+    text-align:center;
+    font-size: 18px;
+    font-family: Calibri;
+}
+#dropdown{
+    border: 2px solid cornflowerblue;
+    border-radius: 25px;
+    height: 29px;
+    width: 230px;
+    margin-top: 10px;
+    text-align:center;
+    font-size: 18px;
+    font-family: Calibri;
+    margin-left: 1072px;
+}
+.radio{
+    margin: 35px 0px 0px 35px;
+}
+.searchcontainer{
+margin: 112px 0px 0px 503px;
+}
+#addbutton{
+width:70px;
+height:20px;
+background-color:#6C9496;
+color:white;
+border-radius: 25px;
+}
+.datacolumn{
+
+margin-left:600px;
+margin-top:50px;
+
+
+}
+table, th, td {
+    border: 2px solid #6C9496;
+    border-collapse: collapse;
+    border-radius: 25px;
+
+}
+th, td {
+    padding: 5px;
+	text-align:center
+}
+.forcastbox{
+width:200px;
+height:250px;
+border: 0px solid darkslateblue;;
+border-radius: 35px;
+margin:20px 0px 0px 20px;
+    float: left;
+    background-color: beige;
+    box-shadow: 3px 3px 2px cornflowerblue;
+}
+#forcastimage{
+margin:20px 0px 0px 53px;
+    align:center;
+
+}
+.weatherdetails{
+    text-align: center;
+
+}

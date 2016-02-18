@@ -28,8 +28,7 @@
             <tr ng-repeat="city in enteredCities">
 			    <td>{{$index+1}}</td>
                 <td><a href="#weather/{{city}}">{{city}}</a></td>
-					<td><input type="button" class="delete" value="delete" ng-click="remove(item)" ></td>
-				
+				<td><input type="button" class="delete" value="delete" ng-click="remove(item)" ></td>
 			</tr>
 			</table>
 	</div>

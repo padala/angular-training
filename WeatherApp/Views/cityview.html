@@ -1,24 +1,26 @@
 
 <select name="name" ng-model="newCity" ng-change="getCity(newCity)"style=" width:100px;height:30px;border: 2px;margin-top:10px">
-
     <option class="selectbox" value="" selected="selected" style="display:none">select City</option>
     <option ng-repeat="city in cities"value="{{city}}">{{city}}</option>
-</select>
+</select >
+<div class="temp" ng-init="temp='cel'">
 <input type="radio" ng-model="temp" ng-change="changetemp('far')" value="far">Fahrenheit
 <input type="radio" ng-model="temp" ng-change="changetemp('cel')" value="cel">Celsius
+</div>
 <div class="opdetails">
-
   <div class="heading">
     <h1>Weather details for {{mycity}}</h1>
   </div>
 <li ng-repeat="x in weatherdetails.list" class="wdetails">
-
-<div class="box">
-<p style="text-align:center;font-weight: bold">{{x.dt*1000  | date:'EEEE'}}</p>
-  <p>Temp:{{x.temp.day}}</p>
- <p> Temp Max:{{x.temp.max}}</p>
-  <p> Temp Min:{{x.temp.min}}</p>
-
+<div class="box" >
+    <div >
+        <p style="text-align:center;font-weight: bold">{{x.dt*1000  | date:'EEEE'}}</p>
+    </br>
+  <p>Temp:{{x.temp.day}}<span ng-bind="unitMeasure"></span></p>
+ <p> Temp Max:{{x.temp.max}} <span ng-bind="unitMeasure"></span></p>
+  <p> Temp Min:{{x.temp.min}}<span ng-bind="unitMeasure"></span></p>
+</div>
+</div>
 </div>
 </li>
   </div>

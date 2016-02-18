@@ -13,8 +13,7 @@ angularWeatherApp.controller('mainViewCtrl',function($scope,cities,$location){
     $scope.addCity=function(){
         var place = autocompleteFrom.getPlace();
         cities.push(place.address_components[0].short_name);
-        $scope.enteredCities=cities;
-		
+        $scope.enteredCities=cities
     }
     $scope.remove = function(item) {
         var index = $scope.enteredCities.indexOf(item);

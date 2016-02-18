@@ -16,6 +16,4 @@ var angularWeatherApp=angular
             .otherwise({
                 redirectTo: '/'
             });
-
-
     });

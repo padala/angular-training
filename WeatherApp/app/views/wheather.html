@@ -1,0 +1,31 @@
+<div class="container">
+    <div style="text-align: center;    margin-bottom: 50px;">
+        <label>Select City:</label>
+        <select ng-model='selectedLocation' ng-options='location for location in getLocationArray'
+                ng-change="getTemparature(location)"></select>
+    </div>
+
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4" ng-repeat="user in users" style="text-align: center;">
+            <img class="img-circle"
+                 src="/images/{{user.weather[0].icon}}.png"
+                 alt="Generic placeholder image" width="80" height="60">
+
+            <h2>{{user.dt*1000|date:'EEE'}}</h2>
+
+            <h3>{{user.temp.day}}</h3>
+
+
+            <p>{{user.weather[0].description}}</p>
+
+            <p></p>
+        </div>
+        <!-- /.col-lg-4 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>

@@ -1,0 +1,52 @@
+<div class="row">
+    <form name="inputForm">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Select City</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" id="city" ng-model="currentCity">
+                <option ng-repeat="city in cities">{{city.name}}</option>
+            </select>
+
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-default" ng-click="submitCity(currentCity)">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>City</th>
+            <th>Remove</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="location in locations">
+            <td>{{location}}</td>
+            <td><button class="btn btn-default" type="submit" ng-click="removeCity($index)">Remove</button></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div><button class="btn btn-default" ng-click="go('/wheather')" type="submit">Temparature</button></div>
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>

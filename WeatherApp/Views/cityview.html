@@ -4,6 +4,8 @@
     <option class="selectbox" value="" selected="selected" style="display:none">select City</option>
     <option ng-repeat="city in cities"value="{{city}}">{{city}}</option>
 </select>
+<input type="radio" ng-model="temp" ng-change="changetemp('far')" value="far">Fahrenheit
+<input type="radio" ng-model="temp" ng-change="changetemp('cel')" value="cel">Celsius
 <div class="opdetails">
 
   <div class="heading">

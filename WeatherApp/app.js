@@ -17,5 +17,5 @@ var angularWeatherApp=angular
                 redirectTo: '/'
             });
 
-        //$locationProvider.html5Mode(true);
+
     });

@@ -9,16 +9,16 @@ angularWeatherApp.controller('mainViewCtrl',function($scope,cities,$location){
         var place = autocompleteFrom.getPlace();
         $scope.user.input = place.formatted_address;
     });
-	$scope.citiesB=[];
+	$scope.enteredCities=[];
     $scope.addCity=function(){
         var place = autocompleteFrom.getPlace();
         cities.push(place.address_components[0].short_name);
-        $scope.citiesB=cities;
+        $scope.enteredCities=cities;
 		
     }
     $scope.remove = function(item) {
-        var index = $scope.citiesB.indexOf(item);
-        $scope.citiesB.splice(index, 1);
+        var index = $scope.enteredCities.indexOf(item);
+        $scope.enteredCities.splice(index, 1);
     }
 
 });

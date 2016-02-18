@@ -4,6 +4,8 @@ $scope.mycity=$routeParams.weathercity;
     $scope.cities=cities;
 
     $scope.newCity = '';
+    $scope.temp=''
+
    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+$scope.mycity+'&mode=json&units=metric&appid=44db6a862fba0b067b1930da0d769e98'
     $scope.weatherdetails;
     var list=$http.get(apiUrl).success(function(data, status, headers, config) {
@@ -13,6 +15,28 @@ $scope.mycity=$routeParams.weathercity;
 
     $scope.getCity = function(city){
         $location.path('/weather/'+city);
+    };
+    $scope.changetemp=function(temp){
+        if(temp=='far'){
+            var units='imperial';
+
+
+        }
+        else
+        {
+            units="metric";
+        }
+        var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+$scope.mycity+'&mode=json&units='+units+'&appid=44db6a862fba0b067b1930da0d769e98'
+        $scope.weatherdetails;
+
+        var list=$http.get(apiUrl).success(function(data, status, headers, config) {
+            $scope.weatherdetails=data;
+
+        });
+
+    }
+    $scope.x=function(){
+        console.log("entered");
     }
 });
 

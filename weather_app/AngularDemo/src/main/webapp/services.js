@@ -1,10 +1,10 @@
 weatherController.service('locationService', function(){
 	this.selected_locations = [];
-	this.temperature = "";
+	this.temperature = 0;
 	
 	this.add_location = function(location){
 		this.selected_locations.push(location);
-		//return this.selected_locations;
+		return this.selected_locations;
 	}
 	
 	this.get_locations = function(){
@@ -17,6 +17,9 @@ weatherController.service('locationService', function(){
 	
 	this.get_temperature_unit = function(){
 		return this.temperature;
+	}
+	this.update_locations = function(location_array){
+		this.selected_locations = location_array;
 	}
 });
 

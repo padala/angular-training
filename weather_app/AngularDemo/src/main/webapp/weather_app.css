@@ -7,5 +7,50 @@
     padding: 20px;
     width: 200px;
     height: 150px;
-        float: left;
+    float: left;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.weather-panel-new
+{
+width: 20%;
+/* margin-top: 100px; */
+}
+
+.panel-body-new{
+	padding: 30px;
+}
+
+.left{
+	float: left;
+}
+
+
+.clear
+{
+	clear:both
+}
+
+.margin-weather
+{
+	    margin-left: 5%;
+	    margin-right: 5%;
+	
+}
+.width-sm{
+	width:50%
+}
+
+.main-margin{
+	margin: 40px 70px 0px 50px;
+}
+
+.next{
+	width: 30.7%;
+}
+
+.home-select{
+	        width: 50%;
+    margin-left: 48.5%;
+    margin-bottom: 7%;
 }

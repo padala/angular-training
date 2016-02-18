@@ -12,7 +12,8 @@ weatherApp.config(['$routeProvider',
                         }).
                         when('/home', {
                           templateUrl: 'weather-template.html',
-                          controller: 'homeCtrl'
+                          controller: 'homeCtrl',
+                          reloadOnSearch : true
                         }).
                         otherwise({
                           redirectTo: '/config'

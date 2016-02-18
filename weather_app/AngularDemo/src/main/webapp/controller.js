@@ -9,21 +9,46 @@ weatherController.controller('configCtrl', [ '$scope', 'locationService',
 				$scope.anableCustomerDirective = true;
 			};
 
+			$scope.add_one;
+			$scope.add_to_select = function(){
+				//console.log(chosenPlace);
+				
+				$scope.location_list =locationService.add_location($scope.gPlace.gm_accessors_.place.Qd.formattedPrediction);
+				
+			}
 			$scope.location_list = locationService.selected_locations;
 
 			$scope.selected_location = '';
 			$scope.temperature=0;
-			$scope.temperatureChanged = function(value){
+			$scope.temperatureChanged = function(){
 				locationService.set_temperature_unit($scope.temperature);
+			}
+			
+			$scope.update_locations=function(){
+				console.log($scope.selected_location);
+				for(var i=0;i<$scope.selected_location.length;i++){
+					var index = $scope.location_list.indexOf($scope.selected_location[i]);
+					$scope.location_list.splice(index, 1); 
+					
+					locationService.update_locations($scope.location_list);
+					
+										
+				}
+					
+					
 			}
 
 		} ]);
 
-weatherController.controller('homeCtrl', [
+weatherController.controller('homeCtrl', ['$rootScope','$location','$route',
 		'$scope',
 		'locationService',
 		'weatherAPI',
-		function($scope, locationService, weatherAPI) {
+		function($rootScope,$location,$route, $scope, locationService, weatherAPI) {
+			
+	/*$rootScope.$on('$locationChangeStart', function(event) {
+	     $state.go('config');
+	});*/
 
 			$scope.location_list = locationService.selected_locations;
 
@@ -60,6 +85,8 @@ weatherController.controller('homeCtrl', [
 
 				)
 			};
+			
+			
 
 			$scope.select_change = function(o) {
 				$scope.get_week_temp($scope.selected_location,$scope.temperature);

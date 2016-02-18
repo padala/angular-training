@@ -1,14 +1,16 @@
-<div  ng-controller="configCtrl" id='grr'>
+<!-- <div  ng-controller="configCtrl" id='grr'>
  <div class="form-group col-xs-8">
         <input ng-model="chosenPlace" googleplace class="form-control" style = "width:20%"id="usr"
-        ng-autocomplete="result1" details="details1" options="options1">
+        >
     </div>
     <div>
     
+    <a ng-click="add_to_select()" ><button name="kjdfkjsd">Add</button></a>
+    
     <br>
-   <!--  <select name="mySelect" id="mySelect" class="col-xs-3"
+    <select name="mySelect" id="mySelect" class="col-xs-3"
       ng-options="option.name for option in data.availableOptions track by option.id"
-      ng-model="data.selectedOption" multiple></select> -->
+      ng-model="data.selectedOption" multiple></select>
       
       <select name="mySelect" id="mySelect" class="col-xs-3"
       ng-options=" o for o in location_list"
@@ -24,14 +26,14 @@
     Fahrenheit
   </label><br/>
       </div>
-     <!--  <div ng-init="people=abc" />
+      <div ng-init="people=abc" />
         <input type="radio" ng-model="people" value="1"><label>1</label>
         <input type="radio" ng-model="people" value="abc"><label>2</label>
         <input type="radio" ng-model="people" value="3"><label>3</label>
-        </div> -->
+        </div>
       
-    <!-- <li ng-repeat="(key,value) in location_list">{{value}}</li>
-    -->   
+    <li ng-repeat="(key,value) in location_list">{{value}}</li>
+      
       
     </div>
     <br>
@@ -40,3 +42,181 @@
      <div show-weather-week ng-if='anableCustomerDirective'></div>
              
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Drag & Drop components
+Input
+Radios / Checkboxes
+Select
+Buttons
+View HTML
+About
+
+Rendered source of your form:
+
+
+Your Form
+    
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <div  ng-controller="configCtrl" id='configCtrl'>
+
+<div class="main-margin">
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Weather Application</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Enter Location</label>  
+  <div class="col-md-5">
+  <input type="text" class="form-control input-md" ng-model="chosenPlace" googleplace>
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button class="btn btn-primary" ng-click="add_to_select()">Add Location</button>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Temperature">Temperature</label>
+  <div class="col-md-4" ng-init="temperature=0"> 
+    <label class="radio-inline" for="Temperature-0">
+      <input type="radio" value="0" ng-model="temperature" ng-change='temperatureChanged()'>
+      ℃
+    </label> 
+    <label class="radio-inline" for="Temperature-1">
+      <input type="radio" value="1" ng-model="temperature" ng-change='temperatureChanged()'>
+      ℉
+    </label>
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectmultiple">Location List</label>
+  <div class="col-md-5">
+    <select class="form-control" multiple="multiple" ng-options=" o for o in location_list"
+      ng-model="selected_location" ng-required>
+    </select>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id"></label>
+  <div class="col-md-8">
+    <button class="btn btn-warning" ng-click="update_locations()">Remove Locations</button>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id"></label>
+  <div class="pull-right next">
+    <a class="btn btn-success" ng-href="#/home">Next</a>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 

@@ -1,19 +1,94 @@
-<div ng-controller="homeCtrl" ng-init="select_change()">
+<div ng-controller="homeCtrl" ng-init="select_change()"  id="abc">
 
-	<select name="mySelect" id="mySelect" class="col-xs-3"
+<div class="main-margin">
+
+
+<!-- Form Name -->
+<legend>Weather Application</legend>
+
+<!-- Select Basic -->
+<div class="form-group home-select">
+  <label class="col-md-4 control-label" for="selectbasic"></label>
+  <div class="col-md-5">
+    <select class="form-control" ng-options=" o for o in location_list" ng-model="selected_location"
+		ng-change="select_change()">
+    </select>
+  </div>
+</div>
+
+	<!-- <div class="margin-weather">
+	<select name="mySelect" id="mySelect" class="col-xs-3 pull-right"
 		ng-options=" o for o in location_list" ng-model="selected_location"
 		ng-change="select_change()"></select>
-		
+	</div>
+	 -->
+	<div class="clear"></div>
+	<div>
+		<div class="panel panel-info margin-weather weather-panel-new left">
+    
+    <div class="panel-heading">
+        <h3 class="panel-title">{{today.dt*1000 | date:'EEE'}}</h3>
+    </div>
+    <div class="panel-body-new">
+<div>
+			<img src="images/{{today['weather'][0].icon}}.png" alt="" class="pull-right">
+			</div>
+			<div>
+			<p class="width-sm">Temperature {{today.main.temp}} {{temperature == "0" ? "℃" : "℉"}}</p>
+			</div>
+</div>
+
+
+</div>
+
+<div class="panel panel-info margin-weather weather-panel-new left" ng-repeat="day in week track by $index" ng-if="$index != 0">
+    
+    <div class="panel-heading">
+        <h3 class="panel-title">{{day.dt*1000|date:'EEE'}}</h3>
+    </div>
+    <div class="panel-body-new">
+<div>
+			<img src="images/{{day['weather'][0].icon}}.png" alt="" class="pull-right">
+			</div>
+			<div>
+			<p class="width-sm">Temperature {{(day.temp.min + day.temp.max)/2 | limitTo:5}}	{{temperature == "0" ? "℃" : "℉"}}</p>
+			</div>
+</div>
+
+
+</div>
+
+
+
+</div>
+	
+	
+	</div>
+	
+	
+	<!-- <div class="margin-weather">
 	<div class="weather-panel">
 		<fieldset>
 			<legend>{{today.dt*1000 | date:'EEE'}}</legend>
-			<p>Temperature {{today.main.temp}}</p>
+			<div>
+			<img src="images/{{today['weather'][0].icon}}.png" alt="" class="pull-right">
+			</div>
+			<div>
+			<p class="width-sm">Temperature {{today.main.temp}} {{temperature == "0" ? "℃" : "℉"}}</p>
+			</div>
 		</fieldset>
 	</div>
 	<div class="weather-panel" ng-repeat="day in week track by $index" ng-if="$index != 0">
 		<fieldset>
 			<legend>{{day.dt*1000|date:'EEE'}}</legend>
-			<p>Temperature{{(day.temp.min + day.temp.max)/2 | limitTo:5}}</p>
+			<div>
+			<img src="images/{{day['weather'][0].icon}}.png" alt="" class="pull-right">
+			</div>
+			<div>
+			<p class="width-sm">Temperature {{(day.temp.min + day.temp.max)/2 | limitTo:5}}	{{temperature == "0" ? "℃" : "℉"}}</p>
+			</div>
+			
 		</fieldset>
 	</div>
+	</div>	 -->
 </div>

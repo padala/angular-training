@@ -8,12 +8,14 @@ weatherController.directive('googleplace',['$http','locationService',function($h
             };
             scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
 			
-            google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
+           /* google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
                 scope.$apply(function() {
                     model.$setViewValue(element.val());
                     locationService.add_location(element.val());
                 });
-            })
+            })*/
+            
+           
         }
                  
     }

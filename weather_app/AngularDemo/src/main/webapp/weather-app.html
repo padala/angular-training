@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.6/router.min.js"></script>
+ 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+ 	<scriptgru src="ngAutocomplete.js"></script>
+ 	<script src="ISOCountries.js"></script>
+  <link rel="stylesheet" type="text/css" href="weather_app.css">
+</head>
+<body style="margin-top: 10px;" ng-app='weatherApp'>
+
+<div ng-view></div>
+
+
+
+
+<script type="text/javascript">
+
+/*var myApp = angular.module('weatherApp', [
+  'ngRoute']);*/
+
+ var myApp=angular.module('weatherApp', []);
+myApp.config(['$routeProvider','ngRoute',
+  function($routeProvider,ngRoute) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'main-view.html',
+        controller: 'MyCtrl'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'temperature-view.html',
+        controller: 'show_temp'
+      }).
+      otherwise({
+        redirectTo: '/phones'
+      });
+  }]);
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

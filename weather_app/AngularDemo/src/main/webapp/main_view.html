@@ -1,0 +1,42 @@
+<div  ng-controller="configCtrl" id='grr'>
+ <div class="form-group col-xs-8">
+        <input ng-model="chosenPlace" googleplace class="form-control" style = "width:20%"id="usr"
+        ng-autocomplete="result1" details="details1" options="options1">
+    </div>
+    <div>
+    
+    <br>
+   <!--  <select name="mySelect" id="mySelect" class="col-xs-3"
+      ng-options="option.name for option in data.availableOptions track by option.id"
+      ng-model="data.selectedOption" multiple></select> -->
+      
+      <select name="mySelect" id="mySelect" class="col-xs-3"
+      ng-options=" o for o in location_list"
+      ng-model="selected_location" multiple></select>
+      
+      <div ng-init="temperature=0">
+      <label>
+    <input type="radio" ng-model="temperature" value="0" ng-change='temperatureChanged(value)'>
+    Celsius
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="temperature" value="1" ng-change='temperatureChanged(value)'>
+    Fahrenheit
+  </label><br/>
+      </div>
+     <!--  <div ng-init="people=abc" />
+        <input type="radio" ng-model="people" value="1"><label>1</label>
+        <input type="radio" ng-model="people" value="abc"><label>2</label>
+        <input type="radio" ng-model="people" value="3"><label>3</label>
+        </div> -->
+      
+    <!-- <li ng-repeat="(key,value) in location_list">{{value}}</li>
+    -->   
+      
+    </div>
+    <br>
+    <a ng-href="#/home"><button name="kjdfkjsd">Next</button></a>
+    
+     <div show-weather-week ng-if='anableCustomerDirective'></div>
+             
+    </div>

@@ -1,0 +1,11 @@
+.weather-panel
+{
+	margin-top: 100px;
+    width: 50%;
+    border-radius: 25px;
+    border: 2px solid #A5A99E;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+        float: left;
+}

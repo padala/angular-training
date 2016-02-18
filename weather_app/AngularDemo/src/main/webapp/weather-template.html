@@ -1,0 +1,19 @@
+<div ng-controller="homeCtrl" ng-init="select_change()">
+
+	<select name="mySelect" id="mySelect" class="col-xs-3"
+		ng-options=" o for o in location_list" ng-model="selected_location"
+		ng-change="select_change()"></select>
+		
+	<div class="weather-panel">
+		<fieldset>
+			<legend>{{today.dt*1000 | date:'EEE'}}</legend>
+			<p>Temperature {{today.main.temp}}</p>
+		</fieldset>
+	</div>
+	<div class="weather-panel" ng-repeat="day in week track by $index" ng-if="$index != 0">
+		<fieldset>
+			<legend>{{day.dt*1000|date:'EEE'}}</legend>
+			<p>Temperature{{(day.temp.min + day.temp.max)/2 | limitTo:5}}</p>
+		</fieldset>
+	</div>
+</div>

@@ -1,5 +1,11 @@
 var weatherController = angular.module('weatherController', []);
 
+weatherController.run(['$rootScope', '$location', function ($rootScope, $location) {
+   console.log("kslfj")
+	//$rootScope.$on('$stateChangeStart', function (event, toState) {});
+   $location.url('/');
+}]);
+
 weatherController.controller('configCtrl', [ '$scope', 'locationService',
 		function($scope, locationService) {
 			$scope.gPlace;
@@ -50,6 +56,7 @@ weatherController.controller('homeCtrl', ['$rootScope','$location','$route',
 	     $state.go('config');
 	});*/
 
+	
 			$scope.location_list = locationService.selected_locations;
 
 			$scope.selected_location = $scope.location_list[0];
